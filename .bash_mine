@@ -1,0 +1,30 @@
+export JAVA_HOME=/home/user/devtools/jdk/jdk1.6.0_45
+export M2_HOME=/home/user/devtools/build/apache-maven-3.0.5
+export NDOCS_HOME=/home/user/devtools/docs/naturaldocs
+
+export PATH=$JAVA_HOME/bin:$M2_HOME/bin:$NDOCS_HOME:/$PATH
+export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=512m"
+
+# Java version aliases
+alias j16='export JAVA_HOME=/home/user/devtools/jdk/jdk1.6.0_45 && export PATH=$JAVA_HOME/bin:$PATH'
+alias j17='export JAVA_HOME=/home/user/devtools/jdk/jdk1.7.0_40 && export PATH=$JAVA_HOME/bin:$PATH'
+
+# Maven aliases
+alias mci='mvn clean install'
+alias mcit='mvn clean install -Dmaven.test.skip=true'
+alias mp='mvn clean install -T C1'
+alias mpt='mvn clean install -Dmaven.test.skip=true -T C1'
+
+# Tomcat aliases
+alias tstart='/home/user/devtools/server/apache-tomcat-7.0.64/bin/catalina.sh start'
+alias tstop='/home/user/devtools/server/apache-tomcat-7.0.64/bin/catalina.sh stop'
+
+# SQLDeveloper aliases
+alias sqld='/home/user/devtools/sqldeveloper/sqldeveloper.sh'
+
+# Rainbowgrep!
+grep_rni_color() { grep --color=always -rni $1 | less -R; }
+alias greprni=grep_rni_color
+
+# Don't forget about at least one live JDK
+export PATH=$JAVA_HOME/bin:$PATH
